@@ -8,10 +8,12 @@ courseRoutes.get('/', async (req, res) => {
 
 courseRoutes.post('/add-course', (req, res) => {
   const course = new Course({ ...req.body });
+  console.log(req.body)
 
   course.save((error, message) => {
+    console.log(res,"Data coming is")
     if (error) {
-      return res.status(500).json({ response: null, error: error, message: "Something Went Wrong!! Please Try Again..." }).end();
+      return res.status(500).json({ response: null, error: error, message: "Not Working..." }).end();
     } else {
       return res.status(200).json({ response: message, error: null, message: 'Course Added Successfully' }).end();
     }
