@@ -8,7 +8,7 @@ surveyRoutes.get("/:courseId", async (req, res) => {
 
 surveyRoutes.post("/add-survey", async (req, res) => {
     const { response } = { ...req.body };
-    // console.log(json.response);
+    console.log(req.body);
     Survey.insertMany(JSON.parse(response))
     .then((value) => {
         return res.status(200).json({ response: value, error: null, message: 'Students Survey Response Imported Successfully' }).end();
