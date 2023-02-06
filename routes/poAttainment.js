@@ -1,5 +1,6 @@
 const poAttainmentRoutes = require("express").Router();
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
 const { CO_PO_Mapping } = require("./../models/totalCoAttainment");
 const { Course } = require("../models/course");
 

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+mongoose.set('strictQuery', false);
 const Schema = mongoose.Schema;
 const Model = mongoose.model;
 
@@ -8,6 +9,8 @@ const TermSchema = new Schema({
     curriculumId: { type: String },
     curriculumName: { type: String },
     deptName: {type: String},
+    termOwner: { type: String },   // user name
+    termOwnerId: { type: String }, // userId
 }, {
     timestamps: true,
     autoIndex: true

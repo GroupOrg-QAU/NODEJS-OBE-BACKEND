@@ -1,3 +1,5 @@
+const Model = require("mongoose").model;
+mongoose.set('strictQuery', false);
 const Schema = require("mongoose").Schema;
 const Model = require("mongoose").model;
 

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+mongoose.set('strictQuery', false);
 const Schema = mongoose.Schema;
 const Model = mongoose.model;
 
