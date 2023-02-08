@@ -10,6 +10,8 @@ const { authRoutes } = require("./routes/auth");
 const { userRoutes } = require("./routes/userRoutes");
 const { courseRoutes } = require("./routes/courseRoutes");
 const { courseCORoutes } = require("./routes/courseCORoutes");
+const { curriculumPORoutes } = require("./routes/curriculumPORoutes");
+// const { curriculumPORoutes } = require("./routes/curriculumPORoutes")
 const { curriculumRoutes } = require("./routes/curriculumRoutes");
 const { termRoutes } = require("./routes/termRoutes");
 const { assessmentRoutes } = require("./routes/assessmentRoutes");
@@ -31,6 +33,7 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/courses", courseRoutes);
 app.use("/course-outcomes", courseCORoutes);
+app.use("/program-outcomes", curriculumPORoutes);
 app.use("/curriculums", curriculumRoutes);
 app.use("/terms", termRoutes);
 app.use("/assessments", assessmentRoutes);

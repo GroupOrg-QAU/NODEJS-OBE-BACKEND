@@ -33,4 +33,25 @@ curriculumRoutes.delete("/delete/:curriculumId", (req, res) => {
     })
 });
 
+
+curriculumRoutes.put("/update-curriculum/:curriculumId", async (req, res) => {
+    let query = {};
+    for (let key in req.body) {
+      if (key !== "curriculumId") query[key] = req.body[key];
+    }
+  
+    Curriculum.findByIdAndUpdate(req.params.curriculumId, {
+      $set: { ...query }
+    }, { new: true }, (error, response) => {
+      if (error) {
+        return res.status(500).json({ ...error, message: "Something Went Wrong!!" }).end();
+      } else {
+        return res.status(200).json({ response: response, message: "Batch Updated successfully" }).end();
+      }
+    })
+  });
+
+
+
+
 module.exports = { curriculumRoutes };
