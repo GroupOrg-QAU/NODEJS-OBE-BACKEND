@@ -9,14 +9,14 @@ const courseSchema = new Schema({
     termId: { type: String },
     termName: { type: String },
     termNo: { type: Number },
-    courseDomain: { type: String, required: true },
-    typeOfCourse: { type: String, required: true }, //Theory, Theory with Lab, Lab/Project Works/Others
-    courseCode: { type: String, required: true },
-    courseTitle: { type: String, required: true },
-    courseAcronym: { type: String, required: true },
-    theoryCredits: { type: Number, required: true, default: 0 },
-    tutorialCredits: { type: Number, required: true, default: 0 },
-    practicalCredits: { type: Number, required: true, default: 0 },
+    courseDomain: { type: String }, //, required: true
+    typeOfCourse: { type: String }, //Theory, Theory with Lab, Lab/Project Works/Others //, required: true
+    courseCode: { type: String }, //, required: true
+    courseTitle: { type: String}, //, required: true 
+    courseAcronym: { type: String }, //, required: true 
+    theoryCredits: { type: Number, default: 0 }, //, required: true,
+    tutorialCredits: { type: Number, default: 0 }, //, required: true
+    practicalCredits: { type: Number, default: 0 }, //, required: true
     totalCredits: { type: Number, default: 0 },
     totalCiaWeightage: { type: Number },
     totalTeeWeightage: { type: Number },
@@ -26,18 +26,18 @@ const courseSchema = new Schema({
     courseOwner: { type: String },
     courseOwnerId: { type: String },
     reviewerDepartment: { type: String, required: true },
-    courseReviewer: { type: String, required: true },
-    lastDateToReview: { type: Date, required: true },
-    totalCourseConatactHours: { type: Number, required: true },
-    totalCiaMarks: { type: Number, required: true },
-    totalMidTermMarks: { type: Number, required: true },
-    totalTeeMarks: { type: Number, required: true },
+    courseReviewer: { type: String }, //, required: true
+    lastDateToReview: { type: Date}, //, required: true 
+    totalCourseConatactHours: { type: Number }, //, required: true
+    totalCiaMarks: { type: Number }, //, required: true
+    totalMidTermMarks: { type: Number}, //, required: true 
+    totalTeeMarks: { type: Number}, //, required: true 
     totalAttendanceMarks: { type: Number, default: 0 },
     totalMarks: { type: Number },
-    teeDuration: { type: Number, required: true },
+    teeDuration: { type: Number }, //, required: true
     blommsDomain: { type: String },
-    state: { type: Boolean, default: true },
-    poMapId: { type: String, default:"0"}
+    state: { type: Boolean }, //, default: true
+    poMapId: { type: String, default: null}
 }, {
     timestamps: true,
     autoIndex: true,
